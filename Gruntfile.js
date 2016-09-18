@@ -64,6 +64,17 @@ module.exports = function (grunt) {
       task: {
         src: ['app/views/layouts/main.handlebars']
       }
+    },
+    copy: {
+      task: {
+        files: [
+          { 
+            expand: true, 
+            src: ['app/views/**'], 
+            dest: 'public/views/'
+          }
+        ]
+      }
     }
   });
 
