@@ -17,7 +17,8 @@ module.exports = function(app, config) {
   var environment = {
     // if it is running on localhost, environment.dev will be true
     // otherwise environment.dev will be false
-    dev: app.get('env') === 'development',
+    dev: app.get('env') === 'development'
+    // dev: !app.get('env') === 'development' -> uncomment to test the prod environment
   }
 
   var envPath = environment.dev ? '/app' : '/www';
@@ -42,10 +43,11 @@ module.exports = function(app, config) {
   app.use(cookieParser());
   app.use(compress());
 
-  console.log(environment.dev);
+  envPath += environment.dev ? '/assets' : '/views';
 
-  //app.use(express.static(config.root + '/public'));
-  app.use(express.static(config.root + envPath + '/assets'));
+  console.log('static assets:', config.root + envPath + '/assets');
+  
+  app.use(express.static(config.root + envPath));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');

@@ -87,6 +87,28 @@ module.exports = function (grunt) {
         src: 'www/'
       }
     },
+    // replace nas referencias prs spontsr os csminhod absolutos
+    // de css e js antes de executar o useminPrepare
+    'string-replace': {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'www/views/layouts/',
+          src: '**/*.handlebars',
+          dest: 'www/views/layouts/'
+        }],
+        options: {
+          replacements: [{
+            pattern: /<script src=\"/g,
+            replacement: '<script src=\"app/assets/'
+          },
+          {
+            pattern: /<link rel="stylesheet" href=\"/g,
+            replacement: '<link rel="stylesheet" href=\"app/assets/'
+          }]
+        }
+      }
+    },
     // altera o html principal na producao para apontar para os arquivos
     // minificados e concatenados
     usemin : {
@@ -120,9 +142,10 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('deploy_assets', [
+  grunt.registerTask('deploy', [
     'clean',
     'copy',
+    'string-replace',
     'useminPrepare',
     'concat',
     'uglify',
