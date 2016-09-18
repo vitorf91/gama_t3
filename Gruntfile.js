@@ -64,7 +64,7 @@ module.exports = function (grunt) {
     wiredep: {
       task: {
         src: ['app/views/dev/layouts/main.handlebars'],
-        ignorePath: '../../../components'
+        ignorePath: '../../../assets'
       }
     },
     copy: {

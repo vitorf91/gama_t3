@@ -43,7 +43,7 @@ module.exports = function(app, config) {
   console.log(environment.dev);
 
   if(environment.dev) {
-    app.use(express.static(config.root + '/app/components'));
+    app.use(express.static(config.root + '/app/assets'));
   }
 
   app.use(express.static(config.root + '/public'));
