@@ -20,18 +20,14 @@ module.exports = function(app, config) {
 
   console.log(environment.dev);
 
-  var viewPath = environment.dev ? '/app/views/dev'
-    : 'app/views/prod';
-    
-  var assetsPath = environment.dev ? '/app/assets'
-    : 'www/assets';
+  var envPath = environment.dev ? '/app' : '/www';
   
   app.engine('handlebars', exphbs({
-    layoutsDir: config.root + viewPath + '/layouts/',
+    layoutsDir: config.root + envPath + '/views/layouts/',
     defaultLayout: 'main',
-    partialsDir: [config.root + viewPath + '/partials/']
+    partialsDir: [config.root + envPath + '/views/partials/']
   }));
-  app.set('views', config.root + viewPath);
+  app.set('views', config.root + envPath + '/views');
   app.set('view engine', 'handlebars');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -50,7 +46,7 @@ module.exports = function(app, config) {
   // }
 
   //app.use(express.static(config.root + '/public'));
-  app.use(express.static(config.root + assetsPath));
+  app.use(express.static(config.root + envPath + 'assets'));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');

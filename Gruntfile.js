@@ -20,7 +20,7 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         files: {
-          'app/assets/output-css/style.css': 'app/assets/sass/style.scss'
+          'app/assets/sass/output.css': 'app/assets/sass/style.scss'
         }
       }
     },
@@ -48,8 +48,8 @@ module.exports = function (grunt) {
       },
       views: {
         files: [
-          'app/views/dev/*.handlebars',
-          'app/views/dev/**/*.handlebars'
+          'app/views/*.handlebars',
+          'app/views/**/*.handlebars'
         ],
         tasks: ['clean', 'copy'],
         options: { livereload: reloadPort }
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
     // injeta dependencias do bower no html principal
     wiredep: {
       task: {
-        src: ['app/views/dev/layouts/main.handlebars'],
+        src: ['app/views/layouts/main.handlebars'],
         ignorePath: '../../../assets'
       }
     },
@@ -74,9 +74,9 @@ module.exports = function (grunt) {
         files: [
           { 
             expand: true,
-            cwd: 'app/views/dev/',
+            cwd: 'app/views/',
             src: ['**/*'], 
-            dest: 'app/views/prod/'
+            dest: 'www/views/'
           }
         ]
       }
@@ -84,21 +84,21 @@ module.exports = function (grunt) {
     // exclui as views da pasta de producao antes de copiar novamente
     clean: {
       task: {
-        src: 'app/views/prod/'
+        src: 'www/'
       }
     },
     // altera o html principal na producao para apontar para os arquivos
     // minificados e concatenados
     usemin : {
-      html: 'app/views/prod/layouts/main.handlebars'
+      html: 'www/views/layouts/main.handlebars'
     },
     // identifica os arquivos que devem ser minificados e concatenados
     useminPrepare: {
       options: {
-        root: 'app/views/prod',
-        dest: 'app/views/prod'
+        root: 'www/views',
+        dest: 'www/views'
       },
-      html: 'app/views/prod/layouts/main.handlebars'
+      html: 'www/views/layouts/main.handlebars'
     }
   });
 
