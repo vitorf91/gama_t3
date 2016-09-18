@@ -1,0 +1,35 @@
+html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	padding: 1.5em;
+	border: 1px solid;
+}
+
+.title-pages {
+	display: flex;
+	height: 100px;
+	border-bottom: 1px solid;
+	padding: 1em 0;
+}
+
+.img-logo {
+	height: 400px;
+	width: 100%;
+	border: 1px solid;
+}
+
+.page-logo {
+	width: 200px;
+	border: 1px solid;
+}
+
+.pages {
+	display: flex;
+}
