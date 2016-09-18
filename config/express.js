@@ -45,7 +45,7 @@ module.exports = function(app, config) {
 
   envPath += environment.dev ? '/assets' : '/views';
 
-  console.log('static assets:', config.root + envPath + '/assets');
+  console.log('static assets:', config.root + envPath);
   
   app.use(express.static(config.root + envPath));
   app.use(methodOverride());

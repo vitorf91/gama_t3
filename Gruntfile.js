@@ -33,7 +33,8 @@ module.exports = function (grunt) {
         files: [
           'app.js',
           'app/**/*.js',
-          'config/*.js'
+          'config/*.js',
+          '!app/assets/components/**/*'
         ],
         tasks: ['develop', 'delayed-livereload']
       },
@@ -58,14 +59,14 @@ module.exports = function (grunt) {
         files: [
           './bower.json'
         ],
-        tasks: ['wiredep']
+        tasks: ['wiredep', 'string-replace:bower']
       }
     },
     // injeta dependencias do bower no html principal
     wiredep: {
       task: {
         src: ['app/views/layouts/main.handlebars'],
-        ignorePath: '../../../assets'
+        //ignorePath: '../../../assets'
       }
     },
     // copia as views originais para a pasta de producao
@@ -105,6 +106,24 @@ module.exports = function (grunt) {
           {
             pattern: /<link rel="stylesheet" href=\"/g,
             replacement: '<link rel="stylesheet" href=\"app/assets/'
+          }]
+        }
+      },
+      bower: {
+        files: [{
+          expand: true,
+          cwd: 'app/views/layouts/',
+          src: '**/*.handlebars',
+          dest: 'app/views/layouts/'
+        }],
+        options: {
+          replacements: [{
+            pattern: /<script src=\"..\/..\/assets\/components/g,
+            replacement: '<script src=\"components'
+          },
+          {
+            pattern: /<link rel="stylesheet" href=\"..\/..\/assets\/components/g,
+            replacement: '<link rel="stylesheet" href=\"components'
           }]
         }
       }
