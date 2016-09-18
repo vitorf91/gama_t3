@@ -6,10 +6,11 @@
   <title>{{title }}</title>
 
   <!-- bower:css -->
-  <link rel="stylesheet" href="../../../public/components/materialize/bin/materialize.css" />
+  <link rel="stylesheet" href="/components/materialize/bin/materialize.css" />
   <!-- endbower -->
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/output-css/style.css">
+
   {{#if ENV_DEVELOPMENT}}
     <script src="http://localhost:35729/livereload.js"></script>
   {{/if}}
@@ -20,8 +21,8 @@
   {{{body}}}
 
   <!-- bower:js -->
-  <script src="../../../public/components/jquery/dist/jquery.js"></script>
-  <script src="../../../public/components/materialize/bin/materialize.js"></script>
+  <script src="/components/jquery/dist/jquery.js"></script>
+  <script src="/components/materialize/bin/materialize.js"></script>
   <!-- endbower -->
   
   </body>

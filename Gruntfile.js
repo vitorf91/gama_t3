@@ -20,8 +20,7 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         files: {
-          //'public/css/style.css': 'sass/style.scss'
-          'public/css/style.css': 'public/css/style.scss'
+          'app/assets/output-css/style.css': 'app/assets/sass/style.scss'
         }
       }
     },
@@ -40,7 +39,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: [
-          'public/css/*.scss'
+          'app/assets/sass/*.scss'
         ],
         tasks: ['sass'],
         options: {
@@ -52,6 +51,7 @@ module.exports = function (grunt) {
           'app/views/dev/*.handlebars',
           'app/views/dev/**/*.handlebars'
         ],
+        tasks: ['copy'],
         options: { livereload: reloadPort }
       },
       deps: {

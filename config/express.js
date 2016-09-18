@@ -22,6 +22,9 @@ module.exports = function(app, config) {
 
   var viewPath = environment.dev ? '/app/views/dev'
     : 'app/views/prod';
+    
+  var assetsPath = environment.dev ? '/app/assets'
+    : 'www/assets';
   
   app.engine('handlebars', exphbs({
     layoutsDir: config.root + viewPath + '/layouts/',
@@ -42,11 +45,12 @@ module.exports = function(app, config) {
 
   console.log(environment.dev);
 
-  if(environment.dev) {
-    app.use(express.static(config.root + '/app/assets'));
-  }
+  // if(environment.dev) {
+  //   app.use(express.static(config.root + '/app/assets'));
+  // }
 
-  app.use(express.static(config.root + '/public'));
+  //app.use(express.static(config.root + '/public'));
+  app.use(express.static(config.root + assetsPath));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
