@@ -51,7 +51,7 @@ module.exports = function (grunt) {
           'app/views/dev/*.handlebars',
           'app/views/dev/**/*.handlebars'
         ],
-        tasks: ['copy'],
+        tasks: ['clean', 'copy'],
         options: { livereload: reloadPort }
       },
       deps: {
@@ -61,22 +61,44 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       }
     },
+    // injeta dependencias do bower no html principal
     wiredep: {
       task: {
         src: ['app/views/dev/layouts/main.handlebars'],
         ignorePath: '../../../assets'
       }
     },
+    // copia as views originais para a pasta de producao
     copy: {
       task: {
         files: [
           { 
-            expand: true, 
-            src: ['app/views/dev/**'], 
+            expand: true,
+            cwd: 'app/views/dev/',
+            src: ['**/*'], 
             dest: 'app/views/prod/'
           }
         ]
       }
+    },
+    // exclui as views da pasta de producao antes de copiar novamente
+    clean: {
+      task: {
+        src: 'app/views/prod/'
+      }
+    },
+    // altera o html principal na producao para apontar para os arquivos
+    // minificados e concatenados
+    usemin : {
+      html: 'app/views/prod/layouts/main.handlebars'
+    },
+    // identifica os arquivos que devem ser minificados e concatenados
+    useminPrepare: {
+      options: {
+        root: 'app/views/prod',
+        dest: 'app/views/prod'
+      },
+      html: 'app/views/prod/layouts/main.handlebars'
     }
   });
 
@@ -97,6 +119,16 @@ module.exports = function (grunt) {
         });
     }, 500);
   });
+
+  grunt.registerTask('deploy_assets', [
+    'clean',
+    'copy',
+    'useminPrepare',
+    'concat',
+    'uglify',
+    'cssmin',
+    'usemin'
+  ]);
 
   grunt.registerTask('default', [
     'sass',
