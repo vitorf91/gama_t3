@@ -15,12 +15,15 @@ module.exports = function(app, config) {
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
   var environment = {
+    // if it is running on localhost, environment.dev will be true
+    // otherwise environment.dev will be false
     dev: app.get('env') === 'development',
   }
 
-  console.log(environment.dev);
-
   var envPath = environment.dev ? '/app' : '/www';
+
+  console.log('environment:', environment.dev ? 'development' : 'production');
+  console.log('serving on folder:', envPath);
   
   app.engine('handlebars', exphbs({
     layoutsDir: config.root + envPath + '/views/layouts/',
@@ -41,12 +44,8 @@ module.exports = function(app, config) {
 
   console.log(environment.dev);
 
-  // if(environment.dev) {
-  //   app.use(express.static(config.root + '/app/assets'));
-  // }
-
   //app.use(express.static(config.root + '/public'));
-  app.use(express.static(config.root + envPath + 'assets'));
+  app.use(express.static(config.root + envPath + '/assets'));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');

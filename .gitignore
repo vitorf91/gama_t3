@@ -4,3 +4,5 @@ public/components
 components/
 .tmp/
 app/assets/sass/*.css
+www/
+*.log
