@@ -20,6 +20,7 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         files: {
+          //'public/css/style.css': 'sass/style.scss'
           'public/css/style.css': 'public/css/style.scss'
         }
       }
@@ -48,8 +49,8 @@ module.exports = function (grunt) {
       },
       views: {
         files: [
-          'app/views/*.handlebars',
-          'app/views/**/*.handlebars'
+          'app/views/dev/*.handlebars',
+          'app/views/dev/**/*.handlebars'
         ],
         options: { livereload: reloadPort }
       },
@@ -62,7 +63,7 @@ module.exports = function (grunt) {
     },
     wiredep: {
       task: {
-        src: ['app/views/layouts/main.handlebars']
+        src: ['app/views/dev/layouts/main.handlebars']
       }
     },
     copy: {
@@ -70,8 +71,8 @@ module.exports = function (grunt) {
         files: [
           { 
             expand: true, 
-            src: ['app/views/**'], 
-            dest: 'public/views/'
+            src: ['app/views/dev/**'], 
+            dest: 'app/views/prod/'
           }
         ]
       }

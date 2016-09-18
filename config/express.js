@@ -14,14 +14,21 @@ module.exports = function(app, config) {
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
-  var viewPath = '/app';
+  var environment = {
+    dev: app.get('env') === 'development',
+  }
+
+  console.log(environment.dev);
+
+  var viewPath = environment.dev ? '/app/views/dev'
+    : 'app/views/prod';
   
   app.engine('handlebars', exphbs({
-    layoutsDir: config.root + viewPath + '/views/layouts/',
+    layoutsDir: config.root + viewPath + '/layouts/',
     defaultLayout: 'main',
-    partialsDir: [config.root + viewPath + '/app/views/partials/']
+    partialsDir: [config.root + viewPath + '/partials/']
   }));
-  app.set('views', config.root + viewPath + '/app/views');
+  app.set('views', config.root + viewPath);
   app.set('view engine', 'handlebars');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -46,7 +53,7 @@ module.exports = function(app, config) {
     next(err);
   });
   
-  if(app.get('env') === 'development'){
+  if(environment.dev){
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
       res.render('error', {
