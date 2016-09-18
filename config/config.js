@@ -8,7 +8,7 @@ var config = {
     app: {
       name: 'cabify-time3'
     },
-    port: 3000,
+    port: 9000,
     db: 'mongodb://localhost/cabify-time3-development'
   },
 

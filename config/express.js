@@ -39,6 +39,13 @@ module.exports = function(app, config) {
   }));
   app.use(cookieParser());
   app.use(compress());
+
+  console.log(environment.dev);
+
+  if(environment.dev) {
+    app.use(express.static(config.root + '/app/components'));
+  }
+
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
 
