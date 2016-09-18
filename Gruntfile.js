@@ -52,6 +52,17 @@ module.exports = function (grunt) {
           'app/views/**/*.handlebars'
         ],
         options: { livereload: reloadPort }
+      },
+      deps: {
+        files: [
+          './bower.json'
+        ],
+        tasks: ['wiredep']
+      }
+    },
+    wiredep: {
+      task: {
+        src: ['app/views/layouts/main.handlebars']
       }
     }
   });
