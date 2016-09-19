@@ -30,13 +30,11 @@
  }
 
  .main-content {
- 	display: flex;
  	flex-direction: column;
  	height: 100%;
  	position: relative;
  	padding-left: .5em;	
  	position: relative;
-
  }
 
  .form-title {
@@ -47,9 +45,10 @@
  	padding: 0;
  }
 
-.img-banner {
-	height: 350px;
-}
+ .img-banner {
+ 	height: 350px;
+ 	margin-bottom: 0px !important;
+ }
 
  .information {
  	padding: 0;
@@ -60,7 +59,7 @@
  	padding: 0 .5em;
  	color: #fff;
  	margin-bottom: 0;
- 	margin-top: -7px;	
+ 	margin-top: -90px;	
  }
 
  .call-to-sign-in {	
@@ -105,11 +104,12 @@
  .personal, .data {
  	height: auto;
  	margin-bottom: 0px !important;
+ 	display: flex;
+ 	justify-content: flex-end;
  }
 
  .data-form {
  	height: auto;
- 	margin: 1em;
  }
 
  input {
@@ -123,7 +123,9 @@
  	padding: 1em;
  	margin-bottom: 0px !important;
  	border-radius: 10px;
- 	z-index: 9999;
+ 	z-index: 999;
+ 	position: absolute;
+ 	margin-right: 1em !important;
  }
 
  .alerts {
@@ -139,12 +141,13 @@
 
  .personal-data ._input {
  	margin-top: 0px !important;
- 	margin-bottom: 15px; 	
+ 	text-align: center;
  }
 
  .footer-copyright.container {
  	padding: .5em;
  }
+
  footer.page-footer{
  	padding-top: 0PX;
  }
@@ -167,10 +170,29 @@
  	display: flex;
  	justify-content: center;
  	text-align: center;
- 	margin-top: 0px !important;
  }
 
+ .data {
+ 	z-index: 9999;
+ }
 
+ .dados {
+ 	display: flex;
+ 	flex-direction: row;
+ 	align-items: center;
+ 	justify-content: center;
+ }
+
+ .submit-button {
+ 	display: flex;
+ 	justify-content: center;
+ 	margin-bottom: 1em;
+ }
+
+ .img-box img {
+ 	height: 60px;
+ 	width: 60px;
+ }
 
 
 
