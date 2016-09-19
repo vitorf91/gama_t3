@@ -1,35 +1,180 @@
-html,body {
-	height: 100%;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
+ html, body {
+ 	height: 100%;
+ 	width: 100%;
+ 	padding: 0;
+ 	margin: 0;
+ }
+
+ body {
+ 	background-image: url('../media/banner-home.jpg');
+ 	background-size: 100% 100%;
+ 	background-repeat:no-repeat;
+ 	-webkit-background-size:cover;
+ 	-moz-background-size:cover;
+ 	-o-background-size:cover;
+ 	background-size:cover;
+ 	background-position:center;
+ }
+
+ .container {
+ 	width: 100%;	
+ 	margin-left: 0 !important;
+ 	overflow-y: hidden;
+ 	position: relative;
+ }
+
+ .content {
+ 	height: calc(100% - 106px);
+ 	margin: 0 !important;
+ 	position: relative;
+ }
+
+ .main-content {
+ 	display: flex;
+ 	flex-direction: column;
+ 	height: 100%;
+ 	position: relative;
+ 	padding-left: .5em;	
+ 	position: relative;
+
+ }
+
+ .form-title {
+ 	font-size: 22px;
+ }
+
+ .banner {
+ 	padding: 0;
+ }
+
+.img-banner {
+	height: 350px;
 }
 
-.container {
-	height: 100%;
-	width: 100%;
-	padding: 1.5em;
-	border: 1px solid;
-}
+ .information {
+ 	padding: 0;
+ }
 
-.title-pages {
-	display: flex;
-	height: 100px;
-	border-bottom: 1px solid;
-	padding: 1em 0;
-}
+ .general-information {
+ 	background: #000;
+ 	padding: 0 .5em;
+ 	color: #fff;
+ 	margin-bottom: 0;
+ 	margin-top: -7px;	
+ }
 
-.img-logo {
-	height: 400px;
-	width: 100%;
-	border: 1px solid;
-}
+ .call-to-sign-in {	
+ 	padding: .5em;
+ 	margin-bottom: 0px;	
+ 	background-color: #000;
+ 	color: #fff;
+ 	height: 130px;
+ }
 
-.page-logo {
-	width: 200px;
-	border: 1px solid;
-}
+ .calls {
+ 	display: flex;
+ 	flex-direction: column;
+ 	flex-wrap: wrap;
+ 	margin: 0px;
+ 	padding: 0px;
+ }
 
-.pages {
-	display: flex;
-}
+ .title-information {
+ 	font-size: 2em;
+ }
+
+ .generic-text {
+ 	font-size: 1.5em;
+ }
+
+ .motoristas {
+ 	display: flex;
+ 	margin-left: 5em;
+ }
+
+ .box-information {
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;align-content: center;
+ }
+
+ .box-information h2 {
+ 	margin-top: 0px;
+ }
+
+ .personal, .data {
+ 	height: auto;
+ 	margin-bottom: 0px !important;
+ }
+
+ .data-form {
+ 	height: auto;
+ 	margin: 1em;
+ }
+
+ input {
+ 	background-color: #2d2d36;
+ }
+
+ .personal-data {
+ 	color: white;
+ 	background-color: #2d2c37;
+ 	height: auto;
+ 	padding: 1em;
+ 	margin-bottom: 0px !important;
+ 	border-radius: 10px;
+ 	z-index: 9999;
+ }
+
+ .alerts {
+ 	color: #fff;
+ }
+
+ .categoria {
+ 	float: left;
+ 	box-sizing: border-box;
+ 	padding: 0 0.75rem;
+ 	min-height: 1px;
+ }
+
+ .personal-data ._input {
+ 	margin-top: 0px !important;
+ 	margin-bottom: 15px; 	
+ }
+
+ .footer-copyright.container {
+ 	padding: .5em;
+ }
+ footer.page-footer{
+ 	padding-top: 0PX;
+ }
+ .page-footer {
+ 	border-top: 1px orange solid;
+ 	margin: 0px !important;
+ 	padding-top: 0 !important;
+ }
+
+ .logo {
+ 	height: 45px;
+ 	width: 45px;
+ }
+
+ .image {
+ 	height: 100%;
+ }
+
+ .title-information-box {
+ 	display: flex;
+ 	justify-content: center;
+ 	text-align: center;
+ 	margin-top: 0px !important;
+ }
+
+
+
+
+
+
+
+
+

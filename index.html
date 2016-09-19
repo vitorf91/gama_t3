@@ -1,50 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
-	<title>Landing page</title>
-	<link rel="stylesheet" href="node_modules/materialize-css/bin/materialize.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="node_modules/materialize-css/bin/materialize.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Drive4you</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="node_modules/materialize-css/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--  Scripts-->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/js/materialize.js"></script>
+  <script src="../assets/js/init.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col s12">
-				<div class="row title-pages">
-					<div class="s3 page-logo">
-						LOGO
-					</div>
-					<div class="s9 title-page">
-						<h2> TITULO PAGINA</h2>
-					</div>
-				</div>
-				
-				<div class="row pages">
-						<form class="col s12">
-							<div class="row">
-								<div class="input-field col s6 img-logo">
-									TESTE
-								</div>
-								<div class="input-field col s6">
-									<input id="nome" type="text" class="validate" placeholder="Informe seu nome">
-									<label for="nome"></label>
+  <nav class="light-blue black" role="navigation" class="navbar-fixed">
+    <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"> 
+      <img src="../assets/media/landscape-logo.png" alt="logo-drive4you">
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Quem Somos</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 
-									<input id="email" type="email" class="validate" placeholder="Informe seu e-mail">
-									<label for="last_name"></label>
+<div class="container">
+ <div class="row content">
+  <div class="col s12 main-content">
+
+    <div class="row call-to-sign-in">
+      <div class="col m6 calls">
+        <span class="title-information">OS MELHORES PREÇOS DO MERCADO !!!</span>
+        <span class="generic-text">Passageiros pagam menos !!! </span>
+        <span class="generic-text motoristas">Motoristas ganham mais !!!</span>
+      </div>
+
+      <div class="col m6 l6">
+        <div class="row data">
+          <form class="col s10 offset-s1 m6 offset-m3 l6 offset-l3 data-form">
+            <div class="row personal-data">
+              <div class="input-field col s12 _input">
+                <span class="form-title">Cadastre-se, faça parte da Drive4You</span>
+              </div>
+
+              <div class="input-field col s12 _input">
+                <input id="nome" placeholder="Informe o nome completo" name="name" type="text" class="validate" required>
+                <label for="nome"></label>
+              </div>
+              <div class="input-field col s12 _input">
+                <input id="email" placeholder="Informe o e-mail" type="email" name="email" class="validate" required">
+                <label for="email"></label>
+              </div>
+
+              <div class="categoria">
+                <form action="#">
+                  <span>Categoria</span>
+                  <p>
+                    <input class="with-gap" name="group1" type="radio" id="1" />
+                    <label for="1">Motorista</label>
+                  </p>
+                  <p>
+                    <input class="with-gap" name="group1" type="radio" id="2" />
+                    <label for="2">Passageiro</label>
+                  </p>
+                  <p>
+                    <input class="with-gap" name="group1" type="radio" id="3"  />
+                    <label for="3">Empresa</label>
+                  </p>                    
+                </form>
+              </div>
+
+              <div class="input-field col s12 submit-button">
+               <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div> 
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row img-banner">
+  </div>
 
 
-										<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
-											<i class="material-icons">done</i>
-										</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-	</body>
-	</html>
+
+  <div class="row general-information">
+    <div class="row">
+      <div class="col">
+       <div class="col s12 m12 l12">
+        <h4 class="title-information-box">Faça parte da Drive4You</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div class="icon-block box-information">
+      <div class="img-box">
+        <img src="../assets/media/volante.png" alt="">
+      </div>
+
+      <h5 class="center">Remuneraçao atratativa</h5>
+
+      <p class="light">Tenha um potencial de renda maior do que a media do mercado.Também Ganhe capacitaçoes, premios e bonificaçoes da Drive4You</p>
+    </div>
+  </div>
+
+  <div class="col s12 m4">
+    <div class="icon-block box-information">
+     <div class="img-box">
+       <img src="../assets/media/passageiro.png" alt="">
+     </div>
+     <h5 class="center">Trabalho Orientado</h5>
+
+     <p class="light">Você administra o seu tempo e nós lhe fornecemos todas as informaçoões para que maximize o seu lucro como horários e regiões com maior demanda de passageiro</p>
+   </div>
+ </div>
+
+ <div class="col s12 m4">
+  <div class="icon-block box-information">
+   <div class="img-box">
+    <img src="../assets/media/empresa.png" alt="">
+  </div>
+  <h5 class="center">Empresas</h5>
+
+  <p class="light">Apoio personalizado para resolução de dúvidas e problemas através de nosso time de operadores Drive4You</p>
+</div>
+</div>
+</div>
+</div>
+ <!--  
+</div> -->
+
+
+
+
+</div>
+    <!-- <div class="col s12 m6 l6">
+      <div class="row data">
+        <form class="col s10 offset-s1 m6 offset-m6 l6 offset-l6 data-form">
+          <div class="row personal-data">
+            <div class="input-field col s12 _input">
+              <span class="form-title">Cadastre-se, faça parte da Drive4You</span>
+            </div>
+
+            <div class="input-field col s12 _input">
+              <input id="nome" placeholder="Informe o nome completo" name="name" type="text" class="validate" required>
+              <label for="nome"></label>
+            </div>
+            <div class="input-field col s12 _input">
+              <input id="email" placeholder="Informe o e-mail" type="email" name="email" class="validate" required">
+              <label for="email"></label>
+            </div>
+
+            <div class="categoria">
+              <form action="#">
+                <span>Categoria</span>
+                <p>
+                  <input class="with-gap" name="group1" type="radio" id="1" />
+                  <label for="1">Motorista</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group1" type="radio" id="2" />
+                  <label for="2">Passageiro</label>
+                </p>
+                <p>
+                  <input class="with-gap" name="group1" type="radio" id="3"  />
+                  <label for="3">Empresa</label>
+                </p>                    
+              </form>
+            </div>
+
+            <div class="input-field col s12 submit-button">
+             <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div> -->
+
+        <footer class="page-footer black">
+          <div class="footer-copyright">
+            <div class="container">
+              © 2016 Copyright Text
+              <img src="../assets/media/logo.png" alt="" class="responsive-img right logo">
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+
+
+
+
+
+  </body>
+  </html>
