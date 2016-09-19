@@ -9,7 +9,7 @@ var config = {
       name: 'cabify-time3'
     },
     port: 9000,
-    db: 'mongodb://localhost/cabify-time3-development'
+    db: 'mongodb://localhost/d4u-development'
   },
 
   test: {
@@ -18,7 +18,7 @@ var config = {
       name: 'cabify-time3'
     },
     port: 3000,
-    db: 'mongodb://localhost/cabify-time3-test'
+    db: 'mongodb://localhost/d4u-test'
   },
 
   production: {
@@ -27,7 +27,7 @@ var config = {
       name: 'cabify-time3'
     },
     port: 3000,
-    db: 'mongodb://localhost/cabify-time3-production'
+    db: 'mongodb://localhost/d4u-production'
   }
 };
 

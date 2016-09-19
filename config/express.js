@@ -55,6 +55,12 @@ module.exports = function(app, config) {
     require(controller)(app);
   });
 
+  app.use('/obrigado', function (req, res, next) {
+    res.render('obrigado', {
+      title: 'Obrigado'
+    });
+  });
+
   app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
@@ -80,5 +86,4 @@ module.exports = function(app, config) {
         title: 'error'
       });
   });
-
 };
